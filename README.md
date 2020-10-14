@@ -52,3 +52,18 @@ I estimate my support vector machine's out of sample recall by using 5 fold cros
 I used sklearn's GridSearchCV to search over the kernel and gamma. This search is over kernel = ['rbf','sigmoid'] and gamma = np.linspace(1e-5, 1e-2). I used recall as my metric for scoring.
 
 It should be noted that GridSearchCV is a way to cross validate your models for a variety of parameters. You can read more about GridSearchCV at https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.GridSearchCV.html
+
+**Part 7:**
+
+I calculate the cross validated recall for my regularized model by calling my model with best_score_.
+
+**Part 8:**
+
+I access the results of the cross validation by .cv_results_ method. This returns a dictionary that can be turned into a dataframe using pandas.DataFrame.
+
+I also plot how the mean test error changes as gamma changes. The lines are colored according to kernel. 
+
+Here is a question for you:
+What do you see happening to the cross validated error as gamma increases?
+
+You can check out my thoughts on this question in the jupyter notebook provided: "Classification with Support Vector Machines.ipynb"
