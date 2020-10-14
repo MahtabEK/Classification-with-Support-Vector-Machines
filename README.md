@@ -24,4 +24,31 @@ This dataset consists of 3921 e-mails to a single account, some of which are spa
 - urgent_subj: Whether the word “urgent” was in the email subject. 
 - exclaim_mess: The number of exclamation points in the email message. 
 - number: Factor variable saying whether there was no number, a small number (under 1 million), or a big number. 
+
 The data are from this R package: https://cran.r-project.org/web/packages/openintro/openintro.pdf
+
+**Part 1:**
+
+I read in the email.txt dataset.
+
+**Part 2:**
+
+I split the data into train and test holding out 50% of observations as the test set. I pass random_state=0 to train_test_split to ensure I get the same train and tests sets as the solution.
+
+**Part 3:**
+
+I create a pipeline for the support vector machine. Here, I start with a kernel="linear" and gamma="auto".
+
+**Part 4:**
+
+I use my model to construct a confusion matrix by fitting and predicting on the training data. I calculate the model's training accuracy, precision, and recall using the confusion matrix.
+
+**Part 5:**
+
+I estimate my support vector machine's out of sample recall by using 5 fold cross validation.
+
+**Part 6:**
+
+I used sklearn's GridSearchCV to search over the kernel and gamma. This search is over kernel = ['rbf','sigmoid'] and gamma = np.linspace(1e-5, 1e-2). I used recall as my metric for scoring.
+
+It should be noted that GridSearchCV is a way to cross validate your models for a variety of parameters. You can read more about GridSearchCV at https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.GridSearchCV.html
