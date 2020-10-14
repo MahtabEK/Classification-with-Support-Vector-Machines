@@ -61,7 +61,7 @@ I calculate the cross validated recall for my regularized model by calling my mo
 
 I access the results of the cross validation by .cv_results_ method. This returns a dictionary that can be turned into a dataframe using pandas.DataFrame.
 
-I also plot how the mean test error changes as gamma changes. The lines are colored according to kernel. 
+I also plotted how the mean test error changes as gamma changes. The lines are colored according to kernel. 
 
 Here is a question for you:
 What do you see happening to the cross validated error as gamma increases?
